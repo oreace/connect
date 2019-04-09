@@ -1,0 +1,524 @@
+@font-face {
+  font-family: 'mont';
+  src: 
+  url('/fonts/mont light.ttf') format('truetype'),
+  url('/fonts/mont black italics.ttf') format('truetype'),
+  url('/fonts/mont bold italics.ttf') format('truetype'),
+  url('/fonts/mont bold.ttf') format('truetype'),
+  url('/fonts/mont book italics.ttf') format('truetype'),
+  url('/fonts/mont book.ttf') format('truetype'),
+  url('/fonts/mont extralight italics.ttf') format('truetype'),
+  url('/fonts/mont extralight.ttf') format('truetype'),
+  url('/fonts/mont heavy italics.ttf') format('truetype'),
+  url('/fonts/mont heavy.ttf') format('truetype'),
+  url('/fonts/mont light italics.ttf') format('truetype'),
+  url('/fonts/mont regular italics.ttf') format('truetype'),
+  url('/fonts/mont regular.ttf') format('truetype'),
+  url('/fonts/mont semibold italics.ttf') format('truetype'),
+  url('/fonts/mont thin.ttf') format('truetype'),
+  url('/fonts/mont black.ttf') format('truetype'),
+  url('/fonts/mont semibold.ttf') format('truetype'),
+}
+body {
+  font-family: 'mont';
+  height:100%;
+  background: url("/images/bgmain.png"); 
+  background-size: cover; 
+  background-repeat: repeat; 
+  overflow-x: hidden;
+}
+
+@import "variables";
+.App{
+  width:90%;
+  padding:10px;
+  margin:0 auto;
+}
+
+.navlink{
+  color:$navlink;
+}
+
+.radius{
+  border-radius: $radius;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.prim{
+  color:$primary;
+}
+.sec{
+  color:$secondary;
+}
+.blueish{
+  background-color:$blue;
+  width:100%;
+  margin-top:15px;
+  &:hover, &:visited, &:active{
+    background-color:$blue;
+  }
+}
+
+.gradient{
+  background: $gradient;
+}
+
+.inverseradius{
+  background: $inverseradius;
+}
+
+.capitalize{
+  text-transform: capitalize;
+}
+
+.sidenav-trigger{
+  cursor: pointer;
+}
+
+.special-button{
+  background: $gradient;
+  border-radius: $radius;
+  width:70%;
+  margin-top:50px;
+  font-size:20px; 
+}
+
+.mainContent{
+  display: grid;
+  width:100%;
+  height: 100%;
+  grid-template-columns:repeat(6,1fr);
+  grid-auto-rows: 80px;
+  grid-template-areas: 
+  ". . mainImg mainImg mainImg mainImg"
+  "mainText . mainImg mainImg mainImg mainImg"
+  "mainText .  mainImg mainImg mainImg mainImg";
+  // ". . mainImg mainImg mainImg mainImg";
+  .mainText{
+    grid-area:mainText;
+    text-align: left;
+    h3{
+      font-weight: bolder;
+    }
+  }
+  .mainImg{
+    grid-area:mainImg;
+    img{
+      width:100%;
+      max-height: auto;
+      margin:0 auto;
+    }
+  }
+}
+.signup{
+
+  .card{
+    width:80%;
+    margin:0 auto;
+    margin-top:100px;
+  }
+  
+  .card-content{
+    display: grid;
+    padding:0!important;
+    margin:0 auto;
+    grid-template-columns:repeat(6,1fr);
+    grid-auto-rows: minmax(50px,auto);
+    grid-template-areas: 
+    "form form form form otherside otherside"
+    "form form form form otherside otherside"
+    "form form form form otherside otherside"
+    "form form form form otherside otherside";
+    .form{
+      grid-area:form;
+      padding:30px;
+    }
+    .otherside{
+      grid-area: otherside;
+      margin:0;
+      padding:0;
+      background: url(/images/bg2.jpg);
+      background-size: cover; 
+      background-repeat: repeat; 
+      overflow: hidden;
+      .socials{
+        display:flex;
+        width:80%;
+        height: 100%;
+        margin:0 auto;
+        flex-wrap: wrap;
+        flex-flow: row;
+        justify-content:center;
+        align-items: flex-end;
+        padding-bottom: 30px;
+        i{
+          margin-right:10px;
+          color:white;  
+        }
+      }
+    }
+  }
+}
+
+.signin{
+  .card{
+    width:40%;
+    margin:0 auto;
+    margin-top:100px;
+  }
+}
+
+.dashboard{
+  display: grid;
+  width:100%;
+  height: 100%;
+  grid-template-columns:repeat(8,1fr);
+  grid-auto-rows: minmax(80px, auto);
+  grid-gap:15px;
+  grid-template-areas: 
+  "profiles profiles awards awards awards awards awards awards"
+  "profiles profiles awards awards awards awards awards awards"
+  "bio bio info info info badgeinfo badgeinfo badgeinfo"
+  "bio bio info info info badgeinfo badgeinfo badgeinfo";
+
+  .profile{
+    grid-area: profiles;
+    span{
+      display: block;
+      // font-size: 0.9em;
+      .nameBig{
+        font-size:3em;
+        font-weight: 900;
+      }
+    }
+    .card{
+      // border-radius: $inverseradius;
+      i.toggle{
+        padding-top: 20px;
+        padding-right: 10px;
+      }
+      hr{
+        // display: block;
+        color:black;
+        background-color:black;
+      }
+    }
+    .card-content{
+      display:flex;
+      width:80%;
+      height: 100%;
+      margin:0 auto;
+      flex-wrap: wrap;
+      flex-flow: column;
+      // justify-content:center;
+      align-items: center;
+      .userimg{
+        font-size: 10em;   
+        // color:transparent;
+      }
+      .name{
+        font-size: 1.1em;
+        font-weight: bold;
+      }
+      .title{
+        font-size:0.9em;
+      }
+      .location{
+        font-size: 0.9em !important;
+        i{
+            vertical-align: bottom;
+            font-size: 20px !important;
+          }
+      }
+      .mail{
+        background:$gradient;
+        border-radius: $inverseradius;
+        padding:5px;
+      }
+     
+    }
+   
+    // #txt3{
+    //   font-size:21px;
+    //   line-height:24px;
+    //  }
+    //  .material-icons{
+    //      display: inline-flex;
+    //      vertical-align: top;
+    //  }
+     
+    .card-action{
+      padding-top:3px;
+      padding-bottom:3px;
+      margin:0 auto;
+      text-align: center;
+      font-size: 0.9em;
+      background: $gradient;
+    }
+  }
+  .bio{
+    grid-area:bio;
+    font-size:0.9em;
+    p{
+      margin:0;
+      padding:0;
+    }
+    
+  }
+  .awards{
+    grid-area:awards;
+    display: grid;
+    height: 100%;
+    margin:0 auto;
+    grid-template-columns:repeat(5,1fr);
+    grid-auto-rows: minmax(80px);
+    grid-gap:15px;
+    .award{
+      display:flex;
+      flex-wrap: wrap;
+      flex-flow: column;
+      // justify-content:center;
+      align-items: center;
+      h2{
+        font-weight: bolder;
+      }
+      b{
+        font-weight: bolder;
+      }
+    }
+    .note{
+      grid-column: span 5;
+      text-align:center;
+    }  
+  }
+  .info{
+    grid-area: info;
+    .card{
+      // background: url(/images/bg1fade.jpg);
+      // background-size: cover; 
+      // background-repeat: repeat; 
+      // overflow: hidden;
+      width: 80%;
+      margin:0 auto;
+    }
+    .card-content{
+      display: grid;
+      grid-template-columns:repeat(3,1fr);
+      grid-auto-rows: minmax(20px,auto);
+      grid-gap:10px;
+      grid-template-areas: 
+      "infoimg infoinfo infoinfo "
+      "infotalk infotalk infotalk "
+      "infosocial infosocial infosocial ";
+      .img{
+        grid-area: infoimg;
+      }
+      .info{
+        grid-area: infoinfo;
+        align-self: center;
+      }
+      .talk{
+        grid-area: infotalk;
+        align-self: center;
+        justify-self: center;  
+        padding:15px;
+      }
+      .social{
+        grid-area: infosocial;
+          display:flex;
+          height: 100%;
+          flex-wrap: wrap;
+          flex-flow: row;
+          align-items: flex-end;
+          i{
+            margin-right:10px;
+          }
+       
+      }
+      .userimg{
+        font-size: 10em;
+        display: inline;   
+        // color:transparent;
+      }
+      .name{
+        font-size: 1.1em;
+        font-weight: bold;
+        display: block;
+
+      }
+      .title{
+        font-size:0.9em;
+        display: block;
+
+      }
+      .location{
+        display: block;
+
+        font-size: 0.9em !important;
+        i{
+            vertical-align: bottom;
+            font-size: 20px !important;
+          }
+      }
+      
+     
+    }
+   
+    
+    
+  }
+  .badgeinfo{
+    grid-area:badgeinfo;
+    width: 70%;
+    // margin:0 auto;
+  
+    .title{
+      font-weight: bolder;
+    }
+  }
+
+  
+}
+
+
+@media screen and (min-width:992px){
+  .sidenav, .sidenav-overlay{
+    display:none !important;
+  }
+}
+//=========reponsive
+@media screen and (max-width: 992px){
+  .signup{
+    .card{
+      width:90%;
+      margin:0 auto;
+      margin-top:20px;
+    }
+    
+    .card-content{
+      grid-template-columns:repeat(3,1fr);
+      grid-auto-rows: minmax(50px,auto);
+      grid-template-areas: 
+      "form form form"
+      "form form form"
+      "form form form"
+      "form form form"
+      "otherside otherside otherside";
+      .otherside{
+        .socials{
+          padding-bottom: 10px;
+        }
+      }
+    }  
+  }
+  .signin{
+    .card{
+      width:90%;
+      margin:0 auto;
+      margin-top:20px;
+    }
+  }
+  .dashboard{
+    display: grid;
+    width:100%;
+    height: 100%;
+    grid-template-columns:repeat(6,1fr);
+    grid-auto-rows: minmax(60px, auto);
+    grid-gap:15px;
+    grid-template-areas: 
+    "profiles profiles awards awards awards awards"
+    "profiles profiles  awards awards awards awards"
+    "bio bio info info badgeinfo badgeinfo"
+    "bio bio info info  badgeinfo badgeinfo";
+    .profiles, .awards, .bio, .info, .badgeinfo {
+      width:100%;
+      .card{
+        width:100%;
+        .card-content{
+          width: 100%;
+          .userimg{
+            font-size:6em;
+          }
+        }
+      }
+    }
+
+  }  
+
+}
+@media screen and (max-width:700px){
+  .dashboard{
+    display: grid;
+    width:100%;
+    height: 100%;
+    grid-template-columns:repeat(2,1fr);
+    grid-auto-rows: minmax(60px, auto);
+    grid-gap:15px;
+    grid-template-areas: 
+    "profiles profiles"
+    "awards awards"
+    "bio info"
+    "bio info"
+    "badgeinfo badgeinfo";
+    .profile .card,.badgeinfo .card{
+      width:60%;
+      margin:0 auto;  
+    }
+    
+  }
+}
+
+@media screen and (max-width:500px){
+  .mainContent{
+    display: grid;
+    width:100%;
+    grid-template-columns:repeat(3,1fr);
+    grid-auto-rows: minmax(50px,auto);
+    grid-template-areas: 
+    "mainText mainText ."
+    "mainText mainText ."
+    ". . ."
+    ". . ."
+    "mainImg mainImg mainImg"
+    "mainImg mainImg mainImg"
+    "mainImg mainImg mainImg";
+  }  
+  .dashboard{
+    display: grid;
+    width:100%;
+    margin:0 auto;
+    grid-template-columns:repeat(2,1fr);
+    grid-auto-rows: minmax(60px, auto);
+    grid-template-areas: 
+    "profiles profiles"
+    "awards awards"
+    "bio bio"
+    "info info"
+    "badgeinfo badgeinfo";
+    .awards{
+      .award{
+        img{
+          max-width:60%;
+        }
+        h2{
+          font-size:2em;
+        }
+      }
+    }
+    // .awards{
+    //   display:grid;
+    //   width:100%;
+    //   margin:0 auto;
+    //   grid-template-columns:repeat(3,1fr);
+    //   grid-auto-rows: minmax(30px, auto);
+    //   grid-gap:15px;
+    //   .note{
+    //     grid-column: span 3;
+    //   }
+    // }
+  
+  }  
+}
